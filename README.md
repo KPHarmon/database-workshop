@@ -113,7 +113,7 @@
 * What if you only wanted to see books written by J.K. Rowling?  We can modify our above statement to do just that.  Run `SELECT title FROM books WHERE author='J.K. Rowling';`
 	* You should now see the two books written by J.K. Rowling.  Perfect!
 * For our last trick, let's search for all the information we have for books that were written before 1950.  See if you can figure it out first, then check your answer.
-	* <p style="color=white;">SELECT * from books WHERE date_published<1950;</p>
+	* <p style="color:white;">SELECT * from books WHERE date_published<1950;</p>
 * Now that we have the basics of SQL down, it's time to put all of this knowledge to work.
 
 ## Login Application
