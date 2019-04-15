@@ -14,7 +14,7 @@
 			$connection = pg_pconnect('host=localhost dbname=<dbname> user=<dbuser> password=<dbpwd> connect_timeout=10');
 			$result = pg_query($connection, "INSERT INTO users(username, password) VALUES('$regusr', '$regpwd');");
 			if($result) {
-				echo nl2br("New user created!");
+				echo "New user created!";
 			}
 		?>
 	</body>
