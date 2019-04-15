@@ -56,10 +56,11 @@
 
 ## SQL Configuration
 * First, we need to give ourselves access to postgres.
-* Connect to the postgres by running 'sudo -u postgres psql'
+* Connect to postgres by running 'sudo -u postgres psql'
+	* (Windows users can use `psql -U postgres` and then supply the password they designated during installation)
 * Run `ALTER USER postgres with encrypted password '*******';` where the '*******' are a password of your choice.
 * Disconnect to postgres by typing `\q` or pressing `ctrl+d`
-* Edit the following file using: `sudo vim /etc/postgresql/10/pg_hba.conf'
+* Edit the following file using: `sudo vim /etc/postgresql/10/pg_hba.conf`
 	* (Note: `pg_hba.conf` May be in a different location)
 	* (Note 2: You may use any text editor you would like)
 	* Find the line concerning the __postgres__ user
@@ -76,7 +77,7 @@
 ## SQL Tutorial
 * Let's create our first database!
 * If you are not already logged in, run `psql template1`
-* We are going to create a database for a bookstore.
+* We are going to create a test database for a bookstore.
 * To create a database, we use the command `CREATE DATABASE bookstore;`
 * Great! Now we have a database.  Connect to it using the command `\c bookstore;`
 * Now we need to create tables to store our data.
@@ -112,7 +113,7 @@
 * What if you only wanted to see books written by J.K. Rowling?  We can modify our above statement to do just that.  Run `SELECT title FROM books WHERE author='J.K. Rowling';`
 	* You should now see the two books written by J.K. Rowling.  Perfect!
 * For our last trick, let's search for all the information we have for books that were written before 1950.  See if you can figure it out first, then check your answer.
-	* [Hover for Answer](SELECT * from books WHERE date_published<1950;)
+	* <p style="color=white;">SELECT * from books WHERE date_published<1950;</p>
 * Now that we have the basics of SQL down, it's time to put all of this knowledge to work.
 
 ## Login Application
@@ -123,9 +124,9 @@
 * Then, create a table to host our application's users.
 	* In our example, we assume that there is an incrementing 'id', 'username', and 'password' field.
 * That is all we need to do with our database.  Now let's move onto the actual login application.
-* `cd` into the directory in which you downloaded index.php and login.php;
-* Use the following command to start a web server hosted on localhost port 8000 'php -S localhost:8000`
-* To view your webpages, use an internet browser of your choice and type `localhost:8000` into the searchbar.
+* `cd` into the directory in which you downloaded 'index.php', 'login.php', and 'register.php';
+* Use the following command to start a web server hosted on localhost port 8000 `php -S localhost:8000`
+* To view the webpages, use an internet browser of your choice and type `localhost:8000` into the searchbar.
 * Great start, but you will have to fill in some values in both the register.php file and the login.php value.  They are denoted with < >.
 * After you fill in the necessary variables, give it a try!  Register an account and then log in.  If you are curious about what your database looks like as you add more users, simply use the `SELECT * FROM <tablename>;` command when connected to your database.
 * Tada! You have a functioning application.
@@ -138,4 +139,4 @@
 * More Features
 	* Create an admin account that is capable of deleting accounts.
 	* Allow users to update their information.
-	* Create an interesting application that can utilize this login system and databases! 
+	* Create an interesting application that can utilize this login system and database! 
